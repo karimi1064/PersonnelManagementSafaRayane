@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">PersonnelManagement</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Personnel Management</string>
+    <!--<string name="nav_header_subtitle">android.studio@android.com</string>-->
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_report_overview">Report Overview</string>
+    <string name="menu_create_personnel">Create Personnel</string>
+    <string name="menu_personnel_list">Personnel List</string>
+    <string name="menu_manage_personnel">Manage Personnel</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_security">Security</string>
+    <string name="menu_contact_us">Contact Us</string>
+    <string name="menu_about_us">About Us</string>
+    <string name="menu_exit">Exit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_settings">Settings</string>
+    <string name="settings_select_theme">Select Theme:</string>
+    <string name="settings_select_font">Select Font:</string>
+    <string name="settings_sample_text">Sample Text... Sample Text...</string>
+    <string name="settings_select_font_size">Select Font Size:</string>
+    <string name="twice_click_to_exit">Twice Click To Exit</string>
+    <string name="exit">Exit</string>
+    <string name="do_you_want_to_exit">Do you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="email_address">Email Address:</string>
+    <string name="karimi1064_yahoo_com">karimi1064@yahoo.com</string>
+    <string name="android_developer">Android Developer:</string>
+    <string name="maryam_karimi">Maryam Karimi</string>
+    <string name="app_description">An Application for management your personnel.</string>
+    <string name="create_personnel">Create Personnel</string>
+    <string name="personnel_list">Personnel List</string>
+    <string name="manage_personnel">Manage Personnel</string>
+</resources>
