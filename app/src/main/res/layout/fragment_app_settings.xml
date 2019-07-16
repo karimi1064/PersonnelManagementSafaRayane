@@ -7,7 +7,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +42,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:text="@string/settings_select_theme"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -68,7 +69,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:text="@string/settings_select_font"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -77,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginEnd="15dp" />
             </LinearLayout>
 
             <View
@@ -95,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="7dp"
+                    android:layout_marginStart="7dp"
                     android:text="@string/settings_select_font_size"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -104,7 +105,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginEnd="15dp" />
             </LinearLayout>
 
             <View
@@ -143,7 +144,8 @@
                     android:layout_height="40dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/ic_save"
-                    android:tint="?attr/colorPrimary" />
+                    android:tint="?attr/colorPrimary"
+                    android:contentDescription="@string/save" />
 
                 <ImageView
                     android:id="@+id/btn_cancel_settings"
@@ -151,7 +153,8 @@
                     android:layout_height="40dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/ic_cancel"
-                    android:tint="?attr/colorPrimary" />
+                    android:tint="?attr/colorPrimary"
+                    android:contentDescription="@string/cancel" />
             </LinearLayout>
 
         </LinearLayout>

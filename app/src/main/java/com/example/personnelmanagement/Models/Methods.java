@@ -13,7 +13,7 @@ public class Methods {
                 Constant.theme = R.style.AppTheme_pink;
                 break;
             case 0xff9C27B0:
-                Constant.theme = R.style.AppTheme_darpink;
+                Constant.theme = R.style.AppTheme_darkpink;
                 break;
             case 0xff673AB7:
                 Constant.theme = R.style.AppTheme_violet;

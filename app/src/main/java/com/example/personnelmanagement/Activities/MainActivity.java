@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setBackgroundColor(Constant.color);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(this);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         Constant.color = mSharedPreferences.getInt("color", 0xfff67f21);
         Constant.theme = mSharedPreferences.getInt("theme", R.style.AppTheme);
-        Constant.fontStyle = mSharedPreferences.getString("fontStyle", "B Kamran Bold.ttf");
+        Constant.fontStyle = mSharedPreferences.getString("fontStyle", "times.ttf");
         Constant.fontSize = mSharedPreferences.getFloat("fontSize", 12);
     }
 
@@ -164,6 +165,5 @@ public class MainActivity extends AppCompatActivity
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
-
     }
 }

@@ -32,6 +32,7 @@ import com.turkialkhateeb.materialcolorpicker.ColorListener;
 
 public class AppSettings extends Fragment
         implements View.OnClickListener, AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener {
+    View v;
     Spinner spinnerFont;
     //    String[] fontName = {"B Kamran Bold.ttf", "0 Bardiya.ttf", "0 Davat.ttf", "B Mitra.ttf"};
     String[] fontName = {"andlso.ttf", "Gabriola.ttf", "times.ttf"};
@@ -43,7 +44,6 @@ public class AppSettings extends Fragment
     SharedPreferences.Editor editor;
     Button btnColor;
     Methods methods;
-    Constant constant;
     String font;
     Typeface typeface;
     float size;
@@ -55,21 +55,12 @@ public class AppSettings extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_app_settings, container, false);
-
-        spinnerFont = v.findViewById(R.id.spinner_font);
-        seekBarFontSize = v.findViewById(R.id.seek_bar_font_size);
-        txtSample = v.findViewById(R.id.txt_sample_font);
-        btnSave = v.findViewById(R.id.btn_save_settings);
-        btnCancel = v.findViewById(R.id.btn_cancel_settings);
-        btnColor = v.findViewById(R.id.button_color);
+        v = inflater.inflate(R.layout.fragment_app_settings, container, false);
+        initViews();
 
         arrayAdapterFont = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, fontName);
         arrayAdapterFont.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerFont.setAdapter(arrayAdapterFont);
-
-        btnSave.setColorFilter(constant.color);
-        btnCancel.setColorFilter(constant.color);
 
         spinnerFont.setOnItemSelectedListener(this);
         seekBarFontSize.setOnSeekBarChangeListener(this);
@@ -77,13 +68,18 @@ public class AppSettings extends Fragment
         btnCancel.setOnClickListener(this);
         btnColor.setOnClickListener(this);
 
-        methods = new Methods();
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        editor = sharedPreferences.edit();
-
         colorize();
 
         return v;
+    }
+
+    private void initViews() {
+        spinnerFont = v.findViewById(R.id.spinner_font);
+        seekBarFontSize = v.findViewById(R.id.seek_bar_font_size);
+        txtSample = v.findViewById(R.id.txt_sample_font);
+        btnSave = v.findViewById(R.id.btn_save_settings);
+        btnCancel = v.findViewById(R.id.btn_cancel_settings);
+        btnColor = v.findViewById(R.id.button_color);
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -96,11 +92,11 @@ public class AppSettings extends Fragment
 
         btnColor.setBackground(d);
 
-        size = constant.fontSize;
+        size = Constant.fontSize;
         seekBarFontSize.setProgress((int) size);
         txtSample.setTextSize(size);
 
-        font = constant.fontStyle;
+        font = Constant.fontStyle;
         typeface = Typeface.createFromAsset(getActivity().getApplicationContext().getAssets(), "fonts/" + font);
         txtSample.setTypeface(typeface);
     }
@@ -113,20 +109,23 @@ public class AppSettings extends Fragment
                 dialog.setColorListener(new ColorListener() {
                     @Override
                     public void OnColorClick(View v, int color) {
-                        constant.color = color;
+                        Constant.color = color;
                         colorize();
                     }
                 });
                 dialog.show();
                 break;
             case R.id.btn_save_settings:
+                methods = new Methods();
+                sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                editor = sharedPreferences.edit();
                 methods.setColorTheme();
-                constant.fontSize = seekBarFontSize.getProgress();
-                constant.fontStyle = font;
-                editor.putInt("color", constant.color);
-                editor.putInt("theme", constant.theme);
-                editor.putFloat("fontSize", constant.fontSize);
-                editor.putString("fontStyle", constant.fontStyle);
+                Constant.fontSize = seekBarFontSize.getProgress();
+                Constant.fontStyle = font;
+                editor.putInt("color", Constant.color);
+                editor.putInt("theme", Constant.theme);
+                editor.putFloat("fontSize", Constant.fontSize);
+                editor.putString("fontStyle", Constant.fontStyle);
                 editor.commit();
 
                 Intent intent = new Intent(getContext(), MainActivity.class);
@@ -143,7 +142,6 @@ public class AppSettings extends Fragment
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (parent.getId()) {
-
             case R.id.spinner_font:
                 font = fontName[position];
                 typeface = Typeface.createFromAsset(getActivity().getApplicationContext().getAssets(), "fonts/" + font);

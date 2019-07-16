@@ -26,7 +26,6 @@
     <string name="settings_sample_text">Sample Text... Sample Text...</string>
     <string name="settings_select_font_size">Select Font Size:</string>
     <string name="twice_click_to_exit">Twice Click To Exit</string>
-    <string name="exit">Exit</string>
     <string name="do_you_want_to_exit">Do you want to exit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -38,4 +37,22 @@
     <string name="create_personnel">Create Personnel</string>
     <string name="personnel_list">Personnel List</string>
     <string name="manage_personnel">Manage Personnel</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="first_name">First Name: </string>
+    <string name="edt_first_name">First Name</string>
+    <string name="last_name">Last Name: </string>
+    <string name="edt_last_name">Last Name</string>
+    <string name="register">Register</string>
+    <string name="personnel_code">Personnel Code:</string>
+    <string name="enter">Enter</string>
+    <string name="exit">Exit</string>
+    <string name="share_list">Share List</string>
+    <string name="done">Done!</string>
+    <string name="failed">failed!!!</string>
+    <string name="by_code">By Code</string>
+    <string name="by_family">By Family</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="connect_internet_failed">Connection to the Internet failed!!!</string>
 </resources>
